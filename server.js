@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-// 重点！读取 Railway 自动给的 PORT 环境变量，不要写死8080
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -18,7 +17,6 @@ app.get('/api/hello', (req, res) => {
   });
 });
 
-// 必须监听 0.0.0.0
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`服务器启动成功，端口：${PORT}`);
 });
